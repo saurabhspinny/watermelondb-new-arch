@@ -3,7 +3,8 @@
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;
 exports.default = void 0;
-var _reactNative = require("react-native");
+// var _reactNative = require("react-native");
+var NativeWatermelonDB = require("../../../src/NativeWatermelonDB").default; // Adjust the path
 var _randomId_v = _interopRequireDefault(require("./randomId_v2.native"));
 var _fallback = _interopRequireDefault(require("./fallback"));
 /* eslint-disable no-bitwise */
@@ -27,18 +28,19 @@ function nativeRandomId_v1() {
         len++;
       }
     } else {
-      randomNumbers = _reactNative.NativeModules.WMDatabaseBridge.getRandomBytes(256);
+      randomNumbers = NativeWatermelonDB.getRandomBytes(256);
       cur = 0;
     }
   }
   return id;
 }
-var nativeRandomId = function (_NativeModules$WMData, _NativeModules$WMData2) {
-  if (null !== (_NativeModules$WMData = _reactNative.NativeModules.WMDatabaseBridge) && void 0 !== _NativeModules$WMData && _NativeModules$WMData.getRandomIds) {
-    return _randomId_v.default;
-  } else if (null !== (_NativeModules$WMData2 = _reactNative.NativeModules.WMDatabaseBridge) && void 0 !== _NativeModules$WMData2 && _NativeModules$WMData2.getRandomBytes) {
-    return nativeRandomId_v1;
+// Updated nativeRandomId function
+var nativeRandomId = (() => {
+  if (NativeWatermelonDB?.getRandomIds) {
+    return _randomId_v.default; // Use randomId_v2.native if getRandomIds is available
+  } else if (NativeWatermelonDB?.getRandomBytes) {
+    return nativeRandomId_v1; // Use nativeRandomId_v1 if getRandomBytes is available
   }
-  return _fallback.default;
-}();
+  return _fallback.default; // Use fallback if neither method is available
+})();
 var _default = exports.default = nativeRandomId;

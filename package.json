@@ -4,12 +4,25 @@
   "types": "src/index.d.ts",
   "name": "@nozbe/watermelondb",
   "description": "Build powerful React Native and React web apps that scale from hundreds to tens of thousands of records and remain fast",
+  "source": "src/index",
+  "react-native": "src/index",
   "version": "0.28.0-1",
   "engines": {"node": ">=18"},
   "author": "@Nozbe",
   "homepage": "https://github.com/Nozbe/WatermelonDB#readme",
   "bugs": "https://github.com/Nozbe/WatermelonDB/issues",
   "license": "MIT",
+  "files": [
+    "src",
+    "native/android",
+    "native/ios",
+    "native/ios/WatermelonDB.podspec",
+    "!native/android/build",
+    "!native/ios/build",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
   "keywords": [
     "database",
     "sqlite",
@@ -25,7 +38,9 @@
     "reactive",
     "rxjs",
     "better-sqlite3",
-    "db"
+    "db",
+    "ios",
+    "android"
   ],
   "repository": {
     "type": "git",
@@ -140,5 +155,9 @@
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
     "typescript": "^4.5.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
   }
 }

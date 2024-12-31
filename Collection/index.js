@@ -76,7 +76,8 @@ var Collection = exports.default = /*#__PURE__*/function () {
           });
         } else {
           // $FlowFixMe
-          observer.error(result.error);
+          // observer.error(result.error);
+          observer.next();
         }
       });
       return function () {

@@ -1,0 +1,309 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/build/intermediates/cxx/Debug/b1p6e3i4/obj/x86/libwatermelondb-jsi.so"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_link_libraries",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 75,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 86,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 38,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "watermelondb_jsi_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/src/main/cpp/../../../../shared"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/src/main/cpp/../../../../../../../@nozbe/sqlite/sqlite-amalgamation-3460000"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/src/main/cpp/../../../../../../../@nozbe/simdjson/src"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/src/main/cpp/../../../../../../../react-native/React"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/src/main/cpp/../../../../../../../react-native/React/Base"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/src/main/cpp/../../../../../../../react-native/ReactCommon"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/src/main/cpp/../../../../../../../react-native/ReactCommon/jsi"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				0
+			],
+			"sysroot" : 
+			{
+				"path" : "/Users/saurabhsaneja/Library/Android/sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/darwin-x86_64/sysroot"
+			}
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -Os -fPIC"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "watermelondb_jsi_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/src/main/cpp/../../../../shared"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/src/main/cpp/../../../../../../../@nozbe/sqlite/sqlite-amalgamation-3460000"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/src/main/cpp/../../../../../../../@nozbe/simdjson/src"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/src/main/cpp/../../../../../../../react-native/React"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/src/main/cpp/../../../../../../../react-native/React/Base"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/src/main/cpp/../../../../../../../react-native/ReactCommon"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/src/main/cpp/../../../../../../../react-native/ReactCommon/jsi"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12
+			],
+			"sysroot" : 
+			{
+				"path" : "/Users/saurabhsaneja/Library/Android/sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/darwin-x86_64/sysroot"
+			}
+		}
+	],
+	"id" : "watermelondb-jsi::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-landroid",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-llog",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-latomic -lm",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX",
+		"sysroot" : 
+		{
+			"path" : "/Users/saurabhsaneja/Library/Android/sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/darwin-x86_64/sysroot"
+		}
+	},
+	"name" : "watermelondb-jsi",
+	"nameOnDisk" : "libwatermelondb-jsi.so",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/sqlite/sqlite-amalgamation-3460000/sqlite3.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/simdjson/src/simdjson.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "DatabasePlatformAndroid.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "JSIInstaller.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/shared/Database-batch.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/shared/Database-jsi.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/shared/Database-query.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/shared/Database-sqlite.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/shared/Database-turboSync.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/shared/Database.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/shared/DatabaseBridge.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/shared/Sqlite.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/react-native/ReactCommon/jsi/jsi/jsi.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "SHARED_LIBRARY"
+}

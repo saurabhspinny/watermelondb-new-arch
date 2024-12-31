@@ -9,10 +9,12 @@ var _reactNative = require("react-native");
 var _common = require("../../../utils/common");
 var _Result = require("../../../utils/fp/Result");
 /* eslint-disable global-require */
-var {
-  WMDatabaseBridge: WMDatabaseBridge,
-  WMDatabaseJSIBridge: WMDatabaseJSIBridge
-} = _reactNative.NativeModules;
+// var {
+//   WMDatabaseBridge: WMDatabaseBridge,
+//   WMDatabaseJSIBridge: WMDatabaseJSIBridge
+// } = _reactNative.NativeModules;
+var NativeWatermelonDB = require("../../../src/NativeWatermelonDB").default; // Adjust the path
+
 var SqliteNativeModulesDispatcher = /*#__PURE__*/function () {
   function SqliteNativeModulesDispatcher(tag, bridge, {
     experimentalUnsafeNativeReuse: experimentalUnsafeNativeReuse
@@ -21,7 +23,10 @@ var SqliteNativeModulesDispatcher = /*#__PURE__*/function () {
     this._bridge = bridge;
     this._unsafeNativeReuse = experimentalUnsafeNativeReuse;
     if ('production' !== process.env.NODE_ENV) {
-      (0, _common.invariant)(this._bridge, "NativeModules.WMDatabaseBridge is not defined! This means that you haven't properly linked WatermelonDB native module. Refer to docs for instructions about installation (and the changelog if this happened after an upgrade).");
+      // Check for NativeWatermelonDB instead of WMDatabaseBridge in TurboModule architecture
+      (0, _common.invariant)(NativeWatermelonDB, "NativeModules.NativeWatermelonDB is not defined! This means that you haven't properly linked WatermelonDB native module using TurboModules. Refer to docs for instructions about installation (and the changelog if this happened after an upgrade).");
+    
+      // Keep Windows platform check for JSI-based SQLiteAdapter
       (0, _common.invariant)('windows' !== _reactNative.Platform.OS, 'Windows is only supported via JSI. Pass { jsi: true } to SQLiteAdapter constructor.');
     }
   }
@@ -66,7 +71,7 @@ var SqliteJsiDispatcher = /*#__PURE__*/function () {
         error: new Error("".concat(methodName, " unavailable on Windows. Please contribute."))
       });
     } else if ('provideSyncJson' === methodName) {
-      (0, _Result.fromPromise)(WMDatabaseBridge.provideSyncJson.apply(WMDatabaseBridge, (0, _toConsumableArray2.default)(args)), callback);
+      (0, _Result.fromPromise)(NativeWatermelonDB.provideSyncJson.apply(NativeWatermelonDB, args), callback);
       return;
     }
     try {
@@ -95,34 +100,32 @@ var SqliteJsiDispatcher = /*#__PURE__*/function () {
   };
   return SqliteJsiDispatcher;
 }();
-var makeDispatcher = exports.makeDispatcher = function (type, tag, dbName, options) {
-  switch (type) {
-    case 'jsi':
-      return new SqliteJsiDispatcher(dbName, options);
-    case 'asynchronous':
-      return new SqliteNativeModulesDispatcher(tag, WMDatabaseBridge, options);
-    default:
-      throw new Error('Unknown DispatcherType');
-  }
-};
-var initializeJSI = function () {
+// var makeDispatcher = exports.makeDispatcher = function (type, tag, dbName, options) {
+//   switch (type) {
+//     case 'jsi':
+//       return new SqliteJsiDispatcher(dbName, options);
+//     case 'asynchronous':
+//       return new SqliteNativeModulesDispatcher(tag, WMDatabaseBridge, options);
+//     default:
+//       throw new Error('Unknown DispatcherType');
+//   }
+// };
+const initializeJSI = async () => {
   if (global.nativeWatermelonCreateAdapter) {
-    return true;
+    return true; // JSI already initialized
   }
-  var bridge = WMDatabaseBridge;
-  if (bridge.initializeJSI) {
-    try {
-      bridge.initializeJSI();
+
+  try {
+    const result = await NativeWatermelonDB.install(); // Calls the native install method
+    if (result) {
       return !!global.nativeWatermelonCreateAdapter;
-    } catch (e) {
-      _common.logger.error('[SQLite] Failed to initialize JSI');
-      _common.logger.error(e);
+    } else {
+      throw new Error('Failed to install JSI bindings');
     }
-  } else if (WMDatabaseJSIBridge && WMDatabaseJSIBridge.install) {
-    WMDatabaseJSIBridge.install();
-    return !!global.nativeWatermelonCreateAdapter;
+  } catch (error) {
+    console.error('[SQLite] Failed to initialize JSI', error);
+    return false;
   }
-  return false;
 };
 function getDispatcherType(options) {
   if (options.jsi) {

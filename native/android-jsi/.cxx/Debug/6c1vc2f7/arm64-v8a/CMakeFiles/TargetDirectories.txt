@@ -1,0 +1,3 @@
+/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/.cxx/Debug/6c1vc2f7/arm64-v8a/CMakeFiles/watermelondb-jsi.dir
+/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/.cxx/Debug/6c1vc2f7/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/.cxx/Debug/6c1vc2f7/arm64-v8a/CMakeFiles/rebuild_cache.dir

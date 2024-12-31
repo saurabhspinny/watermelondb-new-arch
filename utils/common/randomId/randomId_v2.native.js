@@ -2,7 +2,8 @@
 
 exports.__esModule = true;
 exports.default = nativeRandomId_v2;
-var _reactNative = require("react-native");
+// var _reactNative = require("react-native");
+var NativeWatermelonDB = require("../../../src/NativeWatermelonDB").default; // Adjust the path
 var randomIds = [];
 var cur = 9999;
 
@@ -10,7 +11,7 @@ var cur = 9999;
 // Should be ported to Java too… or better yet, implemented in JSI
 function nativeRandomId_v2() {
   if (64 <= cur) {
-    randomIds = _reactNative.NativeModules.WMDatabaseBridge.getRandomIds().split(',');
+    randomIds = NativeWatermelonDB.getRandomIds().split(',');
     cur = 0;
   }
   return randomIds[cur++];

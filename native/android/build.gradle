@@ -1,5 +1,9 @@
 
 buildscript {
+    ext.safeExtGet = {prop, fallback ->
+        rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+    }
+
     ext.getExtOrDefault = {name ->
         return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties['ReactNativeWatermelonDB_' + name]
     }
@@ -9,26 +13,41 @@ buildscript {
     }
 
     repositories {
+        google()
+        gradlePluginPortal()
         mavenCentral()
     }
 
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${getExtOrDefault('kotlinVersion')}")
+        classpath("com.android.tools.build:gradle:7.0.4")
     }
+}
+
+def isNewArchitectureEnabled() {
+    return project.hasProperty("newArchEnabled") && project.newArchEnabled == "true"
 }
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
+if (isNewArchitectureEnabled()) {
+    apply plugin: 'com.facebook.react'
+}
+
 android {
-    compileSdkVersion getExtOrIntegerDefault('compileSdkVersion')
+    compileSdkVersion safeExtGet('compileSdkVersion', 31)
+    // compileSdkVersion getExtOrIntegerDefault('compileSdkVersion')
     buildToolsVersion getExtOrDefault('buildToolsVersion')
 
     namespace "com.nozbe.watermelondb"
 
     defaultConfig {
-        minSdkVersion getExtOrIntegerDefault('minSdkVersion')
-        targetSdkVersion getExtOrIntegerDefault('targetSdkVersion')
+        minSdkVersion safeExtGet('minSdkVersion', 21)
+        targetSdkVersion safeExtGet('targetSdkVersion', 31)
+        buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
+        // minSdkVersion getExtOrIntegerDefault('minSdkVersion')
+        // targetSdkVersion getExtOrIntegerDefault('targetSdkVersion')
         versionCode 1
         versionName "1.0"
     }
@@ -40,7 +59,20 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${getExtOrDefault('kotlinVersion')}"
 }
 
+if (isNewArchitectureEnabled()) {
+    react {
+        jsRootDir = file("../src/")
+        libraryName = "watermelondb"
+        codegenJavaPackageName = "com.nozbe.watermelondb"
+    }
+}
+
 repositories {
     mavenCentral()
+    maven {
+        // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+        url "$projectDir/../node_modules/react-native/android"
+    }
+    google()
 }
 

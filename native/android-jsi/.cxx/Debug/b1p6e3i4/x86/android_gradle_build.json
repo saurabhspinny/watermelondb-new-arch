@@ -1,0 +1,40 @@
+{
+  "buildFiles": [
+    "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/saurabhsaneja/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/.cxx/Debug/b1p6e3i4/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/saurabhsaneja/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/.cxx/Debug/b1p6e3i4/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "watermelondb-jsi::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "watermelondb-jsi",
+      "output": "/Users/saurabhsaneja/Documents/spinnywork/upgradeFolder/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/build/intermediates/cxx/Debug/b1p6e3i4/obj/x86/libwatermelondb-jsi.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/Users/saurabhsaneja/Library/Android/sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/Users/saurabhsaneja/Library/Android/sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4.1"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "watermelondb-jsi",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "watermelondb-jsi::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-watermelondb-jsi-Debug-8642aa546478a80667e8.json",
+					"name" : "watermelondb-jsi",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/.cxx/Debug/6c1vc2f7/arm64-v8a",
+		"source" : "/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/src/main/cpp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

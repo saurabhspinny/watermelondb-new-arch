@@ -1,0 +1,1 @@
+/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/src/main/cpp/CMakeLists.txt

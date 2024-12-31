@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/sarthaknaithani/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/.cxx/Debug/6c1vc2f7/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/sarthaknaithani/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/.cxx/Debug/6c1vc2f7/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "watermelondb-jsi::@6890427a1f51a3e7e1df": {
+      "artifactName": "watermelondb-jsi",
+      "abi": "arm64-v8a",
+      "output": "/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/build/intermediates/cxx/Debug/6c1vc2f7/obj/arm64-v8a/libwatermelondb-jsi.so",
+      "runtimeFiles": []
+    }
+  }
+}

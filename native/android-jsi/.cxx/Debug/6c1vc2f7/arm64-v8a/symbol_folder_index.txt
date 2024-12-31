@@ -1,0 +1,1 @@
+/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/build/intermediates/cxx/Debug/6c1vc2f7/obj/arm64-v8a

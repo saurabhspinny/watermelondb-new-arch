@@ -1,26 +1,48 @@
 package com.nozbe.watermelondb;
 
-import androidx.annotation.NonNull;
-import com.facebook.react.ReactPackage;
+import androidx.annotation.Nullable;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.module.model.ReactModuleInfo;
+import com.facebook.react.module.model.ReactModuleInfoProvider;
+import com.facebook.react.TurboReactPackage;
 import com.facebook.react.uimanager.ViewManager;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-public class WatermelonDBPackage implements ReactPackage {
-    @NonNull
+public class WatermelonDBPackage extends TurboReactPackage {
+
+    @Nullable
     @Override
-    public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext reactAppContext) {
-        List<NativeModule> modules = new ArrayList<>();
-        modules.add(new WMDatabaseBridge(reactAppContext));
-        return modules;
+    public NativeModule getModule(String name, ReactApplicationContext reactContext) {
+        if (name.equals(WatermelonDBModule.NAME)) {
+            return new WatermelonDBModule(reactContext);
+        } else {
+            return null;
+        }
     }
 
-    @NonNull
     @Override
-    public List<ViewManager> createViewManagers(@NonNull ReactApplicationContext reactAppContext) {
-        return Collections.emptyList();
+    public ReactModuleInfoProvider getReactModuleInfoProvider() {
+        return () -> {
+            final Map<String, ReactModuleInfo> moduleInfos = new HashMap<>();
+            boolean isTurboModule = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
+            moduleInfos.put(
+                    WatermelonDBModule.NAME,
+                    new ReactModuleInfo(
+                            WatermelonDBModule.NAME,
+                            WatermelonDBModule.NAME,
+                            false, // canOverrideExistingModule
+                            false, // needsEagerInit
+                            true, // hasConstants
+                            false, // isCxxModule
+                            isTurboModule // isTurboModule
+            ));
+            return moduleInfos;
+        };
     }
 }

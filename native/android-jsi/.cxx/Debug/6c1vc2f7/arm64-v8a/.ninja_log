@@ -1,0 +1,15 @@
+# ninja log v5
+5	3584	1704180081011000114	CMakeFiles/watermelondb-jsi.dir/JSIInstaller.cpp.o	c93ac5c672fd1bdb
+10	3655	1704180081094459605	CMakeFiles/watermelondb-jsi.dir/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/shared/Database-jsi.cpp.o	b836bdc2e8c63ccb
+0	4187	1704180081616705406	CMakeFiles/watermelondb-jsi.dir/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/shared/Database-query.cpp.o	35a36ebbe5774eb7
+4	4580	1704180082016442600	CMakeFiles/watermelondb-jsi.dir/DatabasePlatformAndroid.cpp.o	5cc2e18dfa571b7d
+11	4841	1704180082266281950	CMakeFiles/watermelondb-jsi.dir/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/shared/Database.cpp.o	56a26a54fb06cb49
+1	5455	1704180082767640723	CMakeFiles/watermelondb-jsi.dir/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/shared/Database-sqlite.cpp.o	bdb8f46b4a212918
+8	5465	1704180082893910139	CMakeFiles/watermelondb-jsi.dir/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/shared/Database-batch.cpp.o	1040ad9e4d9ae78
+3655	6203	1704180083635153203	CMakeFiles/watermelondb-jsi.dir/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/shared/Sqlite.cpp.o	f2a1277019f596b4
+4188	6476	1704180083898735463	CMakeFiles/watermelondb-jsi.dir/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/react-native/ReactCommon/jsi/jsi/jsi.cpp.o	2ba1a446a2f709
+1	7154	1704180084566362138	CMakeFiles/watermelondb-jsi.dir/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/shared/Database-turboSync.cpp.o	19aede030c9a8bad
+4	7184	1704180084619861159	CMakeFiles/watermelondb-jsi.dir/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/simdjson/src/simdjson.cpp.o	d9edd9aaf55c71ea
+1	8110	1704180085504375485	CMakeFiles/watermelondb-jsi.dir/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/sqlite/sqlite-amalgamation-3400100/sqlite3.c.o	21c6d02d50fd49d4
+3585	8126	1704180085560822279	CMakeFiles/watermelondb-jsi.dir/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/shared/DatabaseBridge.cpp.o	4532a7b3af0cf2e8
+8126	8248	1704180085661769363	/Users/sarthaknaithani/Desktop/Dev2/ReactNativeUpgrade/relationship-manager-app/node_modules/@nozbe/watermelondb/native/android-jsi/build/intermediates/cxx/Debug/6c1vc2f7/obj/arm64-v8a/libwatermelondb-jsi.so	307d31d06b2b7886
