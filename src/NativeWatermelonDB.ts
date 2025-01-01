@@ -15,67 +15,91 @@ import type {
 } from '../adapters/type'
 
 export interface Spec extends TurboModule {
-    install(): Promise<boolean>;
-    /**
-   * Initializes a database connection.
-   * Resolves a promise with a status object containing a `code` field
-   * (`"ok"`, `"schema_needed"`, or `"migrations_needed"`) and optionally a `databaseVersion`.
-   */
+    install(successCallback: (result: boolean) => void, errorCallback: (error: string) => void): void;
+    
     initialize: (
-        tag: number,
-        databaseName: string,
-        schemaVersion: number,
-        unsafeNativeReuse: boolean,
-        promise: Promise<{ code: "ok" | "schema_needed" | "migrations_needed"; databaseVersion?: number }>
+      tag: number,
+      databaseName: string,
+      schemaVersion: number,
+      unsafeNativeReuse: boolean,
+      successCallback: (result: { code: "ok" | "schema_needed" | "migrations_needed"; databaseVersion?: number }) => void,
+      errorCallback: (error: string) => void
     ) => void;
 
-    /**
-     * Sets up a database connection with a schema.
-     * Resolves the promise once the connection is established.
-     */
     setUpWithSchema: (
-        tag: number,
-        databaseName: string,
-        schema: string,
-        schemaVersion: number,
-        unsafeNativeReuse: boolean,
-        promise: Promise<void>
+      tag: number,
+      databaseName: string,
+      schema: string,
+      schemaVersion: number,
+      unsafeNativeReuse: boolean,
+      successCallback: (result: void) => void,
+      errorCallback: (error: string) => void
     ) => void;
 
-    /**
-     * Sets up a database connection with migrations.
-     * Resolves the promise once the connection is established or rejects if there is an error.
-     */
     setUpWithMigrations: (
-        tag: number,
-        databaseName: string,
-        migrations: string,
-        fromVersion: number,
-        toVersion: number,
-        unsafeNativeReuse: boolean,
-        promise: Promise<void>
+      tag: number,
+      databaseName: string,
+      migrations: string,
+      fromVersion: number,
+      toVersion: number,
+      unsafeNativeReuse: boolean,
+      successCallback: (result: void) => void,
+      errorCallback: (error: string) => void
     ) => void;
 
-    find(table: TableName<any>, id: RecordId): Promise<CachedFindResult>
+    find(
+      table: TableName<any>,
+      id: RecordId,
+      successCallback: (result: CachedFindResult) => void,
+      errorCallback: (error: string) => void
+    ): void;
     
-    query(query: SerializedQuery): Promise<CachedQueryResult>
+    query(
+      query: SerializedQuery,
+      successCallback: (result: CachedQueryResult) => void,
+      errorCallback: (error: string) => void
+    ): void;
 
-    queryIds(query: SerializedQuery): Promise<RecordId[]>
+    queryIds(
+      query: SerializedQuery,
+      successCallback: (result: RecordId[]) => void,
+      errorCallback: (error: string) => void
+    ): void;
+  
+    unsafeQueryRaw(
+      query: SerializedQuery,
+      successCallback: (result: any[]) => void,
+      errorCallback: (error: string) => void
+    ): void;
 
-    unsafeQueryRaw(query: SerializedQuery): Promise<any[]>
+    count(
+      query: SerializedQuery,
+      successCallback: (result: number) => void,
+      errorCallback: (error: string) => void
+    ): void;
 
-    count(query: SerializedQuery): Promise<number>
+    batch(
+      operations: BatchOperation[],
+      successCallback: (result: void) => void,
+      errorCallback: (error: string) => void
+    ): void;
 
-    batch(operations: BatchOperation[]): Promise<void>
+    unsafeResetDatabase(
+      successCallback: (result: void) => void,
+      errorCallback: (error: string) => void
+    ): void;
 
-    unsafeResetDatabase(): Promise<void>
+    unsafeGetLocalSynchronously(
+      tag: number,
+      key: string
+    ): [string, string] | null;
 
-    getLocal(key: string): Promise<string | undefined>
-    
-    // unsafeGetLocalSynchronously
-    unsafeGetLocalSynchronously: (tag: number, key: string) => [string, string] | null;
-    
-    provideSyncJson(id: number, syncPullResultJson: string): Promise<void>
+    provideSyncJson(
+      id: number,
+      syncPullResultJson: string,
+      successCallback: (result: void) => void,
+      errorCallback: (error: string) => void
+    ): void;
     
     // getRandomBytes
     getRandomBytes: (count: 256) => number[];
