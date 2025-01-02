@@ -48,6 +48,7 @@ export interface Spec extends TurboModule {
     ) => void;
 
     find(
+      tag: number,
       table: TableName<any>,
       id: RecordId,
       successCallback: (result: CachedFindResult) => void,
@@ -55,36 +56,49 @@ export interface Spec extends TurboModule {
     ): void;
     
     query(
-      query: SerializedQuery,
+      tag: number, 
+      table: string, 
+      query: string, 
+      args: any[],
       successCallback: (result: CachedQueryResult) => void,
       errorCallback: (error: string) => void
     ): void;
-
+    
     queryIds(
-      query: SerializedQuery,
+      tag: number, 
+      query: string,
+      args: any[],
       successCallback: (result: RecordId[]) => void,
       errorCallback: (error: string) => void
     ): void;
   
     unsafeQueryRaw(
-      query: SerializedQuery,
+      tag: number, 
+      query: string,
+      args: any[],
       successCallback: (result: any[]) => void,
       errorCallback: (error: string) => void
     ): void;
 
     count(
-      query: SerializedQuery,
+      tag: number, 
+      query: string,
+      args: any[],
       successCallback: (result: number) => void,
       errorCallback: (error: string) => void
     ): void;
-
+    
     batch(
+      tag: number, 
       operations: BatchOperation[],
       successCallback: (result: void) => void,
       errorCallback: (error: string) => void
     ): void;
 
     unsafeResetDatabase(
+      tag: number, 
+      schema: string, 
+      schemaVersion: number,
       successCallback: (result: void) => void,
       errorCallback: (error: string) => void
     ): void;
@@ -96,13 +110,13 @@ export interface Spec extends TurboModule {
 
     provideSyncJson(
       id: number,
-      syncPullResultJson: string,
+      json: string,
       successCallback: (result: void) => void,
       errorCallback: (error: string) => void
     ): void;
     
     // getRandomBytes
-    getRandomBytes: (count: 256) => number[];
+    getRandomBytes: (count: number) => number[];
 }
 
 export default TurboModuleRegistry.getEnforcing<Spec>('WatermelonDB');
